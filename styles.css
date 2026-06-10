@@ -137,7 +137,7 @@ header {
 .gradient-text {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
-    font-size: clamp(28px, 8vw, 75px);
+    font-size: clamp(35px, 8vw, 90px);
     background: linear-gradient(90deg, #1100ff, #00e5ff, #ff0000, #00d5ff);
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -146,7 +146,7 @@ header {
     animation: gradient-shift 5s ease infinite;
     font-feature-settings: "kern" 0;
     padding-left: 22px;
-    padding-right: 2px;
+    padding-right: 0px;
 }
 
 @keyframes gradient-shift {
@@ -173,6 +173,14 @@ main {
     max-width: 1400px;
     margin: 0 auto;
 }
+
+/* Only necessary for "Your brand. Animated." Tagline */
+@media (max-width: 1113px) {
+    .gradient-text {
+        padding-left: 0px
+    }
+}
+
 
 @media (max-width: 1075px) {
     .portfolio-grid {
@@ -320,4 +328,4 @@ footer {
 /* This is for smallest screen size - changes line breaks of the header */
 .mobile-only {  display: block;}
 .desktop-only {  display: none;}
-@media (min-width: 669px) {  .mobile-only {    display: none;  }    .desktop-only {    display: block;  }}
+@media (min-width: 1113px) {  .mobile-only {    display: none;  }    .desktop-only {    display: block;  }}
