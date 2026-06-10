@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.jost-mainFont {
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+body {
+    background-color: rgb(19, 18, 35);
+    color: white;
+    font-family: "Jost", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 100;
+}
+
+/* Floating Logo Styles */
+.floating-logo {
+    position: fixed;
+    top: 10px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.floating-logo:hover {
+    opacity: 0.6;
+}
+
+.floating-logo:active {
+    transform: scale(0.95);
+}
+
+
+.banner {
+    background-color: rgb(19, 18, 35);
+    font-size: 24px;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.banner-name {
+    position: absolute;
+    left: 70px;
+    top: 35px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+/* Hamburger Menu - Hidden on Desktop */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+    padding: 5px;
+    margin-left: auto;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+
+/* Desktop header */
+header {
+    padding: 0px 65px;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.gradient-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 90px;
+    background: linear-gradient(90deg, #1100ff, #00e5ff, #ff0000, #00d5ff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 5s ease infinite;
+    font-feature-settings: "kern" 0;
+    padding-left: 22px;
+    padding-right: 2px;
+}
+
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+main {
+    padding: 10px 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1075px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .banner-name {
+        left: 65px;
+
+    }
+
+    header {
+        font-size: 32px;
+        padding: 0px 65px;
+    }
+    
+    .gradient-text {
+        font-size: 70px;
+    }
+}
+
+
+/* Show hamburger on tablet and mobile */
+@media (max-width: 885px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .banner-name {
+        left: 65px;
+        top: 20px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background-color: rgb(19, 18, 35);
+        border-top: 1px solid transparent;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .nav-links.active {
+        max-height: 300px;
+        border-top: 1px solid #ffffff;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        border-radius: 0;
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        padding: 15px 20px;
+        text-align: left;
+    }
+    
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-links a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+    }
+
+    /* Center floating logo on tablet/mobile */
+    .floating-logo {
+        left: 48%;
+        top: -20px;
+        scale: 70%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+}
+
+
+@media (max-width: 775px) {
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        text-align: center;
+        border-bottom: 1px solid #555;
+    }
+    
+    .banner-name {
+        font-size: 20px;
+        left: 65px;
+        padding: 10px 0px;
+    }
+
+    header {
+        font-size: 28px;
+        padding: 0px 65px;
+    }
+    
+    .gradient-text {
+        font-size: 56px;
+    }
+}
+/*
+@media (max-width: 693px) {
+    header {
+
+    }
+}
+*/
+
+@media (max-width: 600px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    header {
+        font-size: 24px;
+        padding: 0px 30px;
+    }
+    
+    .gradient-text {
+        font-size: 42px;
+    }
+}
+
+.grid-item {
+    background: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.animation-clip {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.grid-item h3 {
+    padding: 1rem;
+    margin: 0;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: 40px;
+    border-top: 1px solid #555;
+}
