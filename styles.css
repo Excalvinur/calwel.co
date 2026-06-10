@@ -129,7 +129,7 @@ body {
 /* Desktop header */
 header {
     padding: 0px 65px;
-    font-size: 42px;
+    font-size: clamp(16px, 4vw, 42px);
     font-weight: 300;
     line-height: 1.1;
 }
@@ -137,7 +137,7 @@ header {
 .gradient-text {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
-    font-size: 90px;
+    font-size: clamp(28px, 8vw, 75px);
     background: linear-gradient(90deg, #1100ff, #00e5ff, #ff0000, #00d5ff);
     background-size: 300% 300%;
     -webkit-background-clip: text;
@@ -185,13 +185,9 @@ main {
     }
 
     header {
-        font-size: 32px;
         padding: 0px 65px;
     }
     
-    .gradient-text {
-        font-size: 70px;
-    }
 }
 
 
@@ -275,33 +271,13 @@ main {
     }
 
     header {
-        font-size: 28px;
         padding: 0px 65px;
     }
-    
-    .gradient-text {
-        font-size: 56px;
-    }
 }
-
-@media (max-width: 693px) {
-    header {
-        font-size: 24px;
-    }
-}
-
 
 @media (max-width: 600px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
-    }
-    
-    header {
-        font-size: 20px;
-    }
-    
-    .gradient-text {
-        font-size: 42px;
     }
 }
 
@@ -338,3 +314,10 @@ footer {
     margin-top: 40px;
     border-top: 1px solid #555;
 }
+
+
+
+/* This is for smallest screen size - changes line breaks of the header */
+.mobile-only {  display: block;}
+.desktop-only {  display: none;}
+@media (min-width: 669px) {  .mobile-only {    display: none;  }    .desktop-only {    display: block;  }}
