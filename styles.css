@@ -21,7 +21,7 @@ body {
 /* Floating Logo Styles */
 .floating-logo {
     position: fixed;
-    top: 10px;
+    top: 5px;
     right: 40px;
     width: 120px;
     height: 120px;
@@ -297,7 +297,7 @@ main {
     }
     
     header {
-        font-size: 22px;
+        font-size: 20px;
     }
     
     .gradient-text {
