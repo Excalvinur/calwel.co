@@ -138,12 +138,12 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
     font-size: clamp(35px, 8vw, 90px);
-    background: linear-gradient(90deg, #1100ff, #00e5ff, #ff0000, #00d5ff);
-    background-size: 300% 300%;
+    background: linear-gradient(90deg, #2818ff, #00e5ff, #ff0000, #00d5ff, #2818ff);
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    animation: gradient-shift 5s ease infinite;
+    animation: gradient-shift 10s linear infinite;
     font-feature-settings: "kern" 0;
     padding-left: 22px;
     padding-right: 0px;
@@ -151,19 +151,37 @@ header {
 
 @keyframes gradient-shift {
     0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
+        background-position: 400% 50%;
     }
     100% {
         background-position: 0% 50%;
     }
 }
 
+
 main {
     padding: 10px 50px;
 }
+
+
+h2 {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 8px;
+}
+
+h2 img {
+  margin-left: 0px;
+  margin-top: 2px;  /* Adjust this value up/down as needed */
+}
+
+h2 svg {
+  margin-left: 0px;
+  margin-top: 2px;  /* Fine-tune vertical alignment */
+  transform: translateY(2px);  /* Or use this for subtle shifts */
+}
+
 
 .portfolio-grid {
     display: grid;
