@@ -28,3 +28,19 @@ navLinks.querySelectorAll('a').forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
+/* Autoplay on hover */
+document.querySelectorAll('.grid-item').forEach(item => {
+    const video = item.querySelector('video');
+    
+    item.addEventListener('mouseenter', () => {
+        video.play();
+    });
+    
+    item.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+        video.load(); // Reloads the video and shows the poster thumbnail
+    });
+});
+
