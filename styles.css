@@ -1,3 +1,7 @@
+/* INDEX.HTML */
+/* INDEX.HTML */
+/* INDEX.HTML */
+
 * {
     margin: 0;
     padding: 0;
@@ -234,8 +238,8 @@ h2 svg {
 
 
 /* Only necessary for "Your brand. Animated." Tagline */
-@media (max-width: 1113px) {
-    .gradient-text {
+@media (max-width: 1112px) {
+    .home-page .gradient-text {
         padding-left: 0px
     }
 }
@@ -362,3 +366,116 @@ footer {
 .mobile-only {  display: block;}
 .desktop-only {  display: none;}
 @media (min-width: 1113px) {  .mobile-only {    display: none;  }    .desktop-only {    display: block;  }}
+
+
+
+/* CONTACT PAGE */
+/* CONTACT PAGE */
+/* CONTACT PAGE */
+
+/* Contact Form Styles */
+.contact-form-container {
+    max-width: 600px;
+    margin: 1rem auto;
+    padding: 0px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.0rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 300;
+    font-size: 36px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    align-self: center;
+}
+
+.submit-btn:hover {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.submit-btn:focus {
+    border: 2px solid rgb(255, 255, 255);
+    outline: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-container {
+        padding: 0.5rem;
+    }
+
+    .contact-form {
+        gap: 1.25rem;
+    }
+}
