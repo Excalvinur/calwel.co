@@ -507,7 +507,7 @@ footer {
 }
 
 .about-text p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
@@ -539,6 +539,68 @@ footer {
 .about-photo:nth-child(3) {
     margin-top: 1rem;
 }
+
+
+/* Carousel Container */
+.carousel-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Carousel Frame (Square Aspect Ratio) */
+.carousel-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Carousel Track (Holds all slides) */
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Individual Carousel Slides */
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Carousel Dots Container */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Individual Dot Button */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+}
+
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 
 
 /* Responsive Design for About Page */
